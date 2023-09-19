@@ -16,7 +16,9 @@ app.set('viewEngine', 'ejs');
 require('./model/userModel');
 
 //defines connection to the database
-mongoose.connect('mongodb://127.0.0.1:27017/readIT', {useNewUrlParser:true}, {useUnifiedTopology:true});
+mongoose.connect('mongodb+srv://noyivasquez:NO8XUguFIa0ysOJm@cluster0.8dav7ml.mongodb.net/readIT?retryWrites=true&w=majority', {
+    useNewUrlParser:true, 
+    useUnifiedTopology:true});
 const db = mongoose.connection;
 db.on('error', console.error.bind('Error connecting to the database.'));
 db.once('open', function(){
@@ -61,4 +63,4 @@ app.get('/contact', function(req, res){
     res.render('contact.ejs')
 });
 
-app.listen(4006);
+app.listen(4008);
