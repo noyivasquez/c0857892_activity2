@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--Group 5-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <title>readIT - Subscribe</title>
+    </head>
+    <body style="background-image: url('https://res.cloudinary.com/dvuojuprj/image/upload/v1691287640/high_quality_syxhmq.png'); background-size: cover;">
+        <div class="header text-center">
+                <img src="https://res.cloudinary.com/dvuojuprj/image/upload/v1691289905/readIT_logo_small_eucxmg.png"  width="30%">
+                <p class="lead">Your source of affordable digital IT magazines</p>
+            <ul class="nav nav-underline justify-content-center mt-5">
+                <li class="nav-item">
+                  <a class="nav-link" href="/"><strong>Home</strong></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/magazines"><strong>Magazines</strong></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"><strong>Subscribe</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact"><strong>Contact Us</strong></a>
+                  </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="d-flex justify-content-center">
+            <div class="card mt-3" style="width: 50rem;">
+                <div class="card-header">
+                    <h5>Subscription form</h5>
+                </div>
+                <div class="card-body">
+                  <form action="/subscribe/add" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail Add:</label>
+                        <input type="text" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="subscription" class="form-label">Subscribe to:</label>
+                        <select class="form-select" name="subscription">
+                            <option selected>Select a magazine</option>
+                            <option value="AI">AI</option>
+                            <option value="Cyber">Cyber</option>
+                            <option value="FinTech">FinTech</option>
+                            <option value="InsurTech">InsurTech</option>
+                          </select>
+                    </div>
+                    <div class="text-center mt-3">
+                        <input type="submit" class="btn btn-primary" value="Subscribe">
+                    </div>
+                  </form>
+                </div>
+                <div class="card-footer text-body-secondary">
+                    <h6 class="card-subtitle mb-2 text-body-secondary">If you have an existing subscription, click <a href="/subscriber">here</a>.</h6>
+                </div>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>

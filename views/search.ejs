@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--Group 5-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <title>readIT - Subscriber</title>
+    </head>
+    <body style="background-image: url('https://res.cloudinary.com/dvuojuprj/image/upload/v1691287640/high_quality_syxhmq.png'); background-size: cover;">
+        <div class="header text-center">
+                <img src="https://res.cloudinary.com/dvuojuprj/image/upload/v1691289905/readIT_logo_small_eucxmg.png"  width="30%">
+                <p class="lead">Your source of affordable digital IT magazines</p>
+            <ul class="nav nav-underline justify-content-center mt-5">
+                <li class="nav-item">
+                  <a class="nav-link" href="/"><strong>Home</strong></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/magazines"><strong>Magazines</strong></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/subscribe"><strong>Subscribe</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact"><strong>Contact Us</strong></a>
+                  </li>
+            </ul>
+        </div>
+        <div class="container">
+                <div class="card mt-3 mx-auto" style="width: 50rem;">
+                    <div class="card-header">
+                        <p>Enter your email to check your existing subscription:</p>
+                    </div>
+                    <div class="card-body">
+                        <form action="/subscriber/find" method="GET">
+                                <input type="text" class="form-control" name="email">
+                            <div class="text-center mt-3">
+                                <input type="submit" class="btn btn-primary" value="Search">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card mt-3 mx-auto" style="width: 50rem;">
+                    <div class="card-header">
+                        <p>Alternatively, if you want to cancel your subscription, use this form:</p>
+                    </div>
+                    <div class="card-body">
+                        <form action="/unsubscribe" method="GET">
+                                <input type="text" class="form-control" name="email">
+                            <div class="text-center mt-3">
+                                <input type="submit" class="btn btn-primary" value="Unsubscribe">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </body>
+</html>

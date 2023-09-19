@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--Group 5-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <title>readIT - Confirm unsubscription</title>
+    </head>
+    <body style="background-image: url('https://res.cloudinary.com/dvuojuprj/image/upload/v1691287640/high_quality_syxhmq.png'); background-size: cover;">
+        <div class="header text-center">
+                <img src="https://res.cloudinary.com/dvuojuprj/image/upload/v1691289905/readIT_logo_small_eucxmg.png"  width="30%">
+                <p class="lead">Your source of affordable digital IT magazines</p>
+            <ul class="nav nav-underline justify-content-center mt-5">
+                <li class="nav-item">
+                  <a class="nav-link" href="/"><strong>Home</strong></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/magazines"><strong>Magazines</strong></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/subscribe"><strong>Subscribe</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact"><strong>Contact Us</strong></a>
+                  </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="d-flex justify-content-center">
+            <div class="card mt-3" style="width: 50rem;">
+                <div class="card-header">
+                    <p>We found the following info in our database. Click confirm to unsubscribe.</p>
+                </div>
+                <div class="card-body">
+                    <section data-position="users">
+                        <form action="/unsubscribe/confirm" method="POST">
+                            <% for(var i = 0; i< userFound.length; i++) {%>
+                                <div class="mb-3">
+                                    <input type="hidden" class="form-control" id="id" name="id" value="<%= userFound[i]._id %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name:</label>
+                                    <input type="text" class="form-control" id="name" name="name" value="<%= userFound[i].name %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">E-mail Add:</label>
+                                    <input type="text" class="form-control" id="email" name="email" value="<%= userFound[i].email %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Subscription:</label>
+                                    <input type="text" class="form-control" id="subscription" name="subscription" value="<%= userFound[i].subscription %>">
+                                </div>
+                            <% } %>
+                            <div class="text-center mt-3">
+                                <input type="submit" class="btn btn-primary" value="Confirm">
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>
