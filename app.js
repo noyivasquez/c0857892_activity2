@@ -8,6 +8,8 @@ const app = xp();
 app.use(bp.urlencoded({extended: true}));
 app.use(bp.json());
 
+const SERVER_PORT = 3000
+
 //setting up the path to access View from view folder
 app.set('views', path.join(__dirname, 'views'));
 app.set('viewEngine', 'ejs');
@@ -63,4 +65,4 @@ app.get('/contact', function(req, res){
     res.render('contact.ejs')
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || SERVER_PORT);
