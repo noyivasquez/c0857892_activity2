@@ -16,11 +16,16 @@ app.set('viewEngine', 'ejs');
 
 //defines the model
 require('./model/userModel');
+var MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://noyivasquez:NO8XUguFIa0ysOJm@cluster0.8dav7ml.mongodb.net/readIT?retryWrites=true&w=majority'
+var DB_NAME = process.env.DB_NAME || 'readIT'
+
 
 //defines connection to the database
-mongoose.connect('mongodb+srv://noyivasquez:NO8XUguFIa0ysOJm@cluster0.8dav7ml.mongodb.net/readIT?retryWrites=true&w=majority', {
+mongoose.connect(`${MONGODB_URI}/${DB_NAME}`); 
+/* {
     useNewUrlParser:true, 
-    useUnifiedTopology:true});
+    useUnifiedTopology:true}
+    */
 const db = mongoose.connection;
 db.on('error', console.error.bind('Error connecting to the database.'));
 db.once('open', function(){
